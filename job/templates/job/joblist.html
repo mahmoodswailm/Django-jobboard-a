@@ -1,0 +1,18 @@
+<h1> this job list</h1>
+
+{% comment %} {{jobs}} {% endcomment %}
+
+{% comment %} {% for job in jobs %}
+    <h2>{{ job.title }}</h2>
+    <p>Company: {{ job.company }}</p>
+    <p>Location: {{ job.location }}</p>
+    <p>Salary: {{ job.salary }}</p>     
+    <p>Vacancies: {{ job.Vacancy }}</p>
+    <p>Experience: {{ job.experience }} years</p>
+    {% comment %} <a href="{% url 'job_details' job.id %}">View Details</a> 
+{% endfor %} {% endcomment %}
+
+{% for job in jobs %}
+    <h2>{{ job.title}} </h2>
+
+    {%endfor%}

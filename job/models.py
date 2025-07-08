@@ -12,9 +12,9 @@ class Job(models.Model):
     description = models.TextField(max_length=1000)
     published_at = models.DateTimeField(auto_now=True)
     Vacancy = models.IntegerField(default=1)
-    salary = models.IntegerField(default=0)
+    salary = models.IntegerField(default=0,verbose_name="salary in (USD)")
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
-    experience = models.IntegerField(default=0)
+    experience = models.IntegerField(default=0,verbose_name="Year")
     
     def __str__(self):
         return self.title
