@@ -9,6 +9,7 @@ class Job(models.Model):
                                 ("FullTime","FullTime"),
                                 ("PartTime","PartTime")
                             ])
+    # Publisher = models.CharField( max_length=50)
     description = models.TextField(max_length=1000)
     published_at = models.DateTimeField(auto_now=True)
     Vacancy = models.IntegerField(default=1)
