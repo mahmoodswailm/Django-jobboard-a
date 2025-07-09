@@ -17,7 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 urlpatterns = [
+    path('', include('home.urls')),  # Home page
     path('admin/', admin.site.urls),
     path('jobs/',include('job.urls')) # ==> (define url name , path to urls file )
 ]
+
+# Adding static and media URl patterns
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# Adding media URL patterns
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Note: The `urlpatterns` list should be defined only once.
+# If you have multiple definitions, they will be overwritten.

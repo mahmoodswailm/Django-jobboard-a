@@ -1,0 +1,25 @@
+<h1>This HOME page</h1>
+<p>Welcome to the Job Board!</p>
+{% comment %} 
+{% if jobs %}
+    <h2>Available Jobs</h2>
+    <ul>
+        {% for job in jobs %}
+            <li>
+                <a href="{% url 'job_details' job.id %}">{{ job.title }}</a> - {{ job.company }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No jobs available at the moment.</p>
+{% endif %}
+
+{% if user.is_authenticated %}
+    <p>Welcome back, {{ user.username }}!</p>
+{% else %}
+    <p><a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Register</a></p>
+{% endif %} 
+
+{% if user.is_staff %}
+    <p><a href="{% url 'job_create' %}">Post a new job</a></p>
+{% endif %} {% endcomment %}
