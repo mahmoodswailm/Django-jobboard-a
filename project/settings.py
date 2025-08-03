@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent # __file__ is the current file,
+#and .parent.parent goes up two levels to the project root.
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!505=8^n&q)#qi8cfq!lh13w=^mo18ajpfeqa5&0=!&4p6j4*h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True # Shows detailed error pages if there’s an exception,
+#Set to False in production,
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1',"https://www.google.com/webhp?hl=ar&sa=X&ved=0ahUKEwjS272syuuOAxU5WEEAHaGRObIQPAgI"]
 
 
 # Application definition

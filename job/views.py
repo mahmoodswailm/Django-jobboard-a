@@ -10,6 +10,8 @@ def job_list(request):
 
 def job_details(request,id):
     job = Job.objects.get(id=id)
-    return render(request,"job\job_details.html",context={
+    return render(request,
+                "job\job_details.html",
+                context={
         "job_de":job
     })

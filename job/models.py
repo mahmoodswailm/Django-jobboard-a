@@ -3,7 +3,8 @@ from django.db import models
 
 #helper function to get the upload path
 def Upload(instance,image:str):
-    image_name,extension = image.split(".")
+    # image_name,extension = image.split(".")
+    extension = image.split(".")[1]
     return f"job/{instance.id}.{extension}"
     # return "job/%s.%s" %(instance.id,extension)
     
@@ -24,6 +25,7 @@ class Job(models.Model):
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     experience = models.IntegerField(default=0,verbose_name="Year")
     image = models.ImageField( upload_to= Upload )
+    # image2 = models.ImageField()
     
     def __str__(self):
         return self.title

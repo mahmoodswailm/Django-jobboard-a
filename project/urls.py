@@ -22,9 +22,9 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('', include('home.urls')),  # Home page
+    path('', include('home.urls',namespace='home' )),  # Home page
     path('admin/', admin.site.urls),
-    path('jobs/',include('job.urls',namespace="jobs") ) # ==> (define url name , path to urls file )
+    path('jobs/',include('job.urls',namespace="jobs")) # ==> (define url name , path to urls file )
 ]
 
 # Adding static and media URl patterns
