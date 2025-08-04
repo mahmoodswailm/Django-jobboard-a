@@ -3,7 +3,7 @@ from .views import Home
 app_name = "home"
 
 urlpatterns = [
-    path('',Home)
+    path('',Home,name='home'),  # Home page
 ]
 
 
