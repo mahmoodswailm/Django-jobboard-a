@@ -32,7 +32,7 @@
                                             <p> <i class="fa fa-map-marker"></i> California, USA</p>
                                         </div>
                                         <div class="location">
-                                            <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                            <p> <i class="fa fa-clock-o"></i> {{job_de.jobtype}}-</p>
                                         </div>
                                     </div>
                                 </div>
@@ -127,11 +127,11 @@
                         </div>
                         <div class="job_content">
                             <ul>
-                                <li>Published on: <span>12 Nov, 2019</span></li>
-                                <li>Vacancy: <span>2 Position</span></li>
-                                <li>Salary: <span>50k - 120k/y</span></li>
+                                <li>Published on: <span><h5>{{job_de.published_at}}</h5></span></li>
+                                <li>Vacancy: <span>{{job_de.Vacancy}}</span></li>
+                                <li>Salary: <span>{{job_de.salary}}</span></li>
                                 <li>Location: <span>California, USA</span></li>
-                                <li>Job Nature: <span> Full-time</span></li>
+                                <li>Job Nature: <span> {{job_de.jobtype}}</span></li>
                             </ul>
                         </div>
                     </div>

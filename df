@@ -1,0 +1,83 @@
+[33mcommit d2b55be732e22c19690a0012fa684551ed473f05[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: swailm <mahmood.swailm@gmail.com>
+Date:   Mon Aug 4 10:46:55 2025 +0300
+
+    modified job title in bradcam area
+
+[33mcommit d1c3974b010f001b527b0643ad3edac08cf3e134[m[33m ([m[1;32mswailm[m[33m)[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Sun Aug 3 16:15:36 2025 +0300
+
+    modified apply button to get to work
+
+[33mcommit 17b6e9b7bc3755b1909388c3e337679437f42531[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Sun Aug 3 16:12:30 2025 +0300
+
+    add pagination to jobs.html
+
+[33mcommit c56310337fcbd2715f53a1639554b7a4b9101390[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Sun Aug 3 14:50:17 2025 +0300
+
+    modified index page by adding links to job list page and job detail page ,made apply button get to function,  modified the main name of job title job detail page
+
+[33mcommit c7a59d8d310294ef73aa7db9e324b2dc5b62d73b[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Fri Jul 11 01:01:27 2025 +0300
+
+    add nmaespace to main urls.py and added name to job_detail url and added app app_name to job.urls.py  3- modified jobs.html to show jobs in database 4- usin {%url 'jobs(namespace):jobdetails(urlname in job.urls) job.id (to pass id of job) '%} to href
+
+[33mcommit 860cfbf4b99c210a19d6f08bfcab361a5264142e[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Wed Jul 9 21:24:43 2025 +0300
+
+    add templates\basic.html and jobs,job_detailsand home pages inherits from basic.html
+
+[33mcommit 98946dc3c14f6e96450af0fc10b606d10099029c[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Wed Jul 9 19:23:58 2025 +0300
+
+     added 1-jobs,jobdetails pages,added {% static 'css,js path' %} to both , added 2-Url for static files 3-created static full with coping static files in it ,add 4-STATIC_URL,STATICFILES_URL vars  5- add url for home page 6- added home page to home\templates\home 7-build logic for it
+
+[33mcommit c91ea377f3971199402e3f060107e1eba51d609d[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Tue Jul 8 11:12:39 2025 +0300
+
+    built joblsit and job detail ligics and created a svery simply html page for rendering them
+
+[33mcommit 965fc594d0c23fae08321342e75125b9b9751324[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Tue Jul 8 10:55:24 2025 +0300
+
+     modified job model by adding vebose name to experience and salary vars
+
+[33mcommit 0642108b993d545704e226c08115efc9b0486341[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Tue Jul 8 06:14:41 2025 +0300
+
+    added Category model,logic in views.py, created urls.py , add path in  project.urls to job.urls, added path in job.urls to logic to activation
+
+[33mcommit baba1935ac760716ae36d3d4bfeb31f69036a2bb[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Mon Jul 7 07:56:29 2025 +0300
+
+    added model job and it's fields
+
+[33mcommit 687eb32cf029ac7f0875af407752a460588e79c5[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Sun Jul 6 17:31:40 2025 +0300
+
+    add apps (job, Blog,contact, home ,accounts)
+
+[33mcommit 16eef222e49c54bce81992edd684e8210b424bf0[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Sun Jul 6 15:57:17 2025 +0300
+
+    add django project structure
+
+[33mcommit 771356e2e9b06e6c9e135c54d8ce5327a0dfaa9a[m
+Author: mahmoodswailm <mahmood.swailm@gmail.com>
+Date:   Sun Jul 6 15:45:43 2025 +0300
+
+    the base i'm working on
