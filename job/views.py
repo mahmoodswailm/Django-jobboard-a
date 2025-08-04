@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .models import Job    
 from django.core.paginator import Paginator
-
-
+from django.utils.text import slugify  
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 def job_list(request):
@@ -15,13 +15,18 @@ def job_list(request):
         "page_obj":page_obj,"jobs":jobs
     })
 
-def job_details(request,id):
-    job = Job.objects.get(id=id)
+def job_details(request,slug):#id
+    # job = Job.objects.get(id=id)
+    # job = Job.objects.get(slug=slugify(id))
+    # job = Job.objects.get(slug=slug)
+    job = get_object_or_404(Job, slug=slug)
+    
     return render(request,
                 "job\job_details.html",
                 context={
         "job_de":job
-    })
+    }
+    )
     
     
     

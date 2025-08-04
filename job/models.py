@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.text import slugify 
 
 #helper function to get the upload path
 def Upload(instance,image:str):
@@ -25,7 +25,17 @@ class Job(models.Model):
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     experience = models.IntegerField(default=0,verbose_name="Year")
     image = models.ImageField( upload_to= Upload )
-    # image2 = models.ImageField()
+    slug =  models.SlugField(max_length=40,
+                            # unique=True,
+                            null=True,
+                            blank=True)  
+    
+    def save(self,*args,**kwargs):
+        # if not self.slug:
+        self.slug = self.title.replace(" ","-").lower()
+        # self.slug = slugify(self.title) # means modify slug after save
+        super(Job,self).save(*args,**kwargs) # and let save method does what it does  
+        
     
     def __str__(self):
         return self.title
