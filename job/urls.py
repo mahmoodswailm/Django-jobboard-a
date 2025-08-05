@@ -14,4 +14,5 @@ urlpatterns = [
     path('',job_list,name="job_list"),  # show all jobs
     # path('<int:id>',job_details,name="job_details") # show jobdetail by id which here is integer
     path('<str:slug>/',job_details,name="job_details") # show jobdetail by id which here is integer
+    # path('<str:title>/',job_details,name="job_details") # show jobdetail by id which here is integer
 ]

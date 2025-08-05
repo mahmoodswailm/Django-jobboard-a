@@ -46,3 +46,23 @@ class Category(models.Model):
     
     def __str__(self):
         return self.title
+
+
+class Apply(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    website = models.URLField(max_length=100,blank=True,null=True)
+    cv = models.FileField(upload_to='cv/',null=True,blank=True)
+    coverletter = models.TextField(max_length=500,blank=True,null=True)
+    
+    job = models.ForeignKey(Job, related_name="apply_job",on_delete=models.CASCADE)
+        # related_name sets the name for the reverse relation from Job to Apply.
+        # It makes it easy to get all applications for a specific job.
+        # job = Job.objects.get(id=1)
+        # applications = job.apply_job.all()  # Gets all Apply objects for this job
+        
+    applied_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.name
+        # return f"{self.name} applied for {self.job.title}"
