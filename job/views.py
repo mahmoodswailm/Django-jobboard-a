@@ -3,7 +3,7 @@ from .models import Job
 from django.core.paginator import Paginator
 from django.utils.text import slugify  
 from django.shortcuts import get_object_or_404
-from .forms import Form
+from .forms import Form, PostJob
 # Create your views here.
 
 def job_list(request):
@@ -18,22 +18,15 @@ def job_list(request):
 
 def job_details(request,slug):#id
     # job = Job.objects.get(id=id)
-    # job = Job.objects.get(slug=slugify(id))
     # job = get_object_or_404(Job, title=title)
     job = Job.objects.get(slug=slug)
     if request.method =="POST":
-        print("post")
         form = Form(request.POST,request.FILES)
         if form.is_valid():
             apply = form.save(commit=False)  # Don't save to DB yet
             apply.job =job 
             apply.save()
-            # form.job = job
-            # form.save() # Associate the job with the form
-            
-            print("valid")
             # return redirect('job:job_list')  # Redirect to job list after saving
-        print("posted")
         
     
     else:
@@ -47,7 +40,20 @@ def job_details(request,slug):#id
     )
     
     
-    
+
+def Add(request):
+    if request.method =="POST":
+        Post = PostJob(request.POST,request.FILES)
+        if Post.is_valid():
+            form= Post.save(commit=False)
+            form.user = request.user
+            form.save()
+            
+    else:
+        Post = PostJob()
+        
+
+    return render(request,"job\Post.html",context={"form":Post})
     
     
 # Example usage of Paginator

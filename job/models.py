@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.text import slugify 
-
+from django.contrib.auth.models import User
 #helper function to get the upload path
 def Upload(instance,image:str):
     # image_name,extension = image.split(".")
@@ -10,6 +10,7 @@ def Upload(instance,image:str):
     
 # Create your models here.
 class Job(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE,related_name="job_user")
     title = models.CharField(max_length=100)
     # location = models
     jobtype = models.CharField(max_length=15,

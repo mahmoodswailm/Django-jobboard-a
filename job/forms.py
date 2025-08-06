@@ -1,5 +1,5 @@
 from django import forms
-from . models import Apply 
+from . models import Apply ,Job
 class Form(forms.ModelForm):
     class Meta:
         model = Apply
@@ -12,3 +12,10 @@ class Form(forms.ModelForm):
         #     'cv': forms.ClearableFileInput(attrs={'class': 'form-control'}),
         #     'coverletter': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
         # }
+
+
+class PostJob(forms.ModelForm):
+    class Meta:
+        model = Job
+        fields ="__all__"
+        exclude = ['slug','user']  # Exclude slug field from the form

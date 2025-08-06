@@ -122,7 +122,7 @@
                             {# Display a form #}
 {% comment %} class="form{% endcomment %}
 
-                        <form action="#" method="POST" >
+                        <form action="#" method="POST" enctype = "multipart/form-data" >
                             {% csrf_token %}
                             {% bootstrap_form form %}
                             {% buttons %}
