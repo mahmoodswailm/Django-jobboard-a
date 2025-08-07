@@ -33,6 +33,8 @@ ALLOWED_HOSTS = ['127.0.0.1',"https://www.google.com/webhp?hl=ar&sa=X&ved=0ahUKE
 # Application definition
 
 INSTALLED_APPS = [
+    "accounts",
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +45,6 @@ INSTALLED_APPS = [
     # My apps
     "job",
     "Blog",
-    "accounts",
     "home",
     "contact",
     'bootstrap4',
@@ -141,3 +142,6 @@ MEDIA_ROOT = BASE_DIR / "media" #==> ?
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# This is for development purposes, to see emails in the console.

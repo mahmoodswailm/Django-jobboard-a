@@ -20,6 +20,7 @@ def job_details(request,slug):#id
     # job = Job.objects.get(id=id)
     # job = get_object_or_404(Job, title=title)
     job = Job.objects.get(slug=slug)
+    
     if request.method =="POST":
         form = Form(request.POST,request.FILES)
         if form.is_valid():

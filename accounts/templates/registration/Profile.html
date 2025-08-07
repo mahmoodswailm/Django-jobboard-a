@@ -1,0 +1,52 @@
+
+{% extends "basic.html" %}
+{% load bootstrap4 %}
+
+
+{% block body %}
+  <div class="container mt-4">
+    <h2>My Profile</h2>
+    <div class="card mb-3">
+      <div class="card-body">
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        {% if user.profile %}
+          <p><strong>Bio:</strong> {{ user.profile.bio }}</p>
+          <p><strong>City:</strong> {{ user.profile.city }}</p>
+          <p><strong>Birth Date:</strong> {{ user.profile.birth_date }}</p>
+        {% endif %}
+      </div>
+    </div>
+    <h4>Update Profile</h4>
+    {% comment %} <form method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <button type="submit" class="btn btn-primary">Update Profile</button>
+    </form> {% endcomment %}
+    <p class="mt-3">
+      <a href="{% url 'password_change' %}">Change Password</a>
+    </p>
+  </div>
+{% endblock%}
+
+{% comment %} this profile my profile
+{% extends "basic.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+  <h2>Profile</h2>
+  <p>Username: {{ user.username }}</p>
+  <p>Email: {{ user.email }}</p>
+  <form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button type="submit" class="btn btn-primary">Update Profile</button>
+  </form>
+
+  <p><a href="{% url 'password_change' %}">Change Password</a></p>
+
+{% endblock %}
+{% comment %} {% load static %}
+{% load i18n %} {% endcomment %} 
+

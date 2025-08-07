@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+  <form method="post" >{% comment %} action="{% url 'login' %}" {% endcomment %}
+    {% csrf_token %}
+    <h2>sign up</h2>
+    {%bootstrap_form form%}
+        <button class="boxed-btn3 w-100" type="submit" >Apply Now</button>
+
+    {% comment %} <input type="submit" value="login" class="boxed-btn3 w-100" >
+    <input type="hidden" name="next" value="{{ next }}"> {% endcomment %}
+  </form>
+
+  {# Assumes you set up the password_reset view in your URLConf #}
+  {% comment %} <p><a href="{% url 'password_reset' %}">Lost password?</a></p> {% endcomment %}
+
+{% endblock %} 

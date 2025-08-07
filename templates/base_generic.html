@@ -26,20 +26,9 @@
                     </div>
 
                     <div class="apply_job_form white-bg">
-                        <h4>Post job</h4>
-                        <form action="#" method="POST" enctype="multipart/form-data">
-                            {% comment %} enctype="multipart/form-data" is used to upload files {% endcomment %}
-                            {% if form.errors %}
-                                <div class="alert alert-danger">
-                                    <strong>Error!</strong> Please correct the errors below.
-                                </div>
-                            {% endif %}
-                            {% csrf_token %}
-                            {% bootstrap_form form %}
-                            {% buttons %}
-                                <button class="boxed-btn3 w-100" type="submit" >Post Now</button>
-                            {% endbuttons %}
-                        </form>
+                        {%block content %}
+                        
+                        {%endblock%}
                     </div>
                 </div>
 
