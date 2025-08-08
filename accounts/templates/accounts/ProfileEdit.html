@@ -1,0 +1,50 @@
+{% extends "base_generic.html" %}{% comment %} inherit from basic.html {% endcomment %}
+{% load bootstrap4 %}
+{% load static %}{% comment %} load static files {% endcomment %}
+{% block body %}
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>{{prof}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="job_details_header">
+                        
+                    </div>
+
+                    <div class="apply_job_form white-bg">
+                        <h4>Edit</h4>
+                        <form action="#" method="POST" enctype="multipart/form-data">
+                            {% comment %} enctype="multipart/form-data" is used to upload files {% endcomment %}
+                            {% if form.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>Error!</strong> Please correct the errors below.
+                                </div>
+                            {% endif %}
+                            {% csrf_token %}
+                            {% bootstrap_form userform %}
+                            {% bootstrap_form proform %}
+                            {% buttons %}
+                                <button class="boxed-btn3 w-100" type="submit" >Edit</button>
+                            {% endbuttons %}
+                        </form>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

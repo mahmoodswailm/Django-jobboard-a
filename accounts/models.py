@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.DO_NOTHING)
-    bio = models.TextField(blank=True, null=True)
+    bio = models.TextField(blank=True, null=True) #biography 
     city = models.ForeignKey('City',on_delete=models.CASCADE,max_length=100,blank=True,null=True)
     birth_date = models.DateField(null=True, blank=True)
 
@@ -14,7 +14,7 @@ class Profile(models.Model):
 
 
 class City(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     country = models.CharField(max_length=100,blank=True,null=True)
     state = models.CharField(max_length=100,blank=True,null=True)
     name = models.CharField(max_length=100,blank=True,null=True)
